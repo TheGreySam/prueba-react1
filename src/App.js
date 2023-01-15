@@ -1,9 +1,11 @@
 import logo from './logo.svg';
+import MiApi from './components/MiApi'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
+      <MiApi />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
