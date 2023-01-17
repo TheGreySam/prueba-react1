@@ -2,20 +2,22 @@ import React from 'react';
 import { useState } from "react";
 
 const Mazo = ({list}) => {
-    //console.log(props.name)
+
     const stararray = list
     const [search, setSearch] = useState('');
     const inputSearch = (e) => {
         setSearch(e.target.value)
     }
-    console.log(search)
-    const starinfo = stararray.filter((e) => {
-        return search.toLowerCase() === '' ? e : e.name.toLowerCase().includes(search)
+    console.log(stararray )
+    /* const starinfo = stararray.filter((e) => {
+        return (
+            search.toLowerCase() === '' ? e : e.name.toLowerCase().includes(search)
+        )
     }).map((e) => {
         return (
             <li className="list-group-item" key={e.id}>{e.name}</li>
         )
-    })
+    })*/ 
     
     return (
         <div className="p-3 " >
@@ -62,7 +64,7 @@ const Mazo = ({list}) => {
         </div>
         <ul className="list-group lista">
                  
-                 {starinfo}
+                 {/*starinfo*/}
                      
                  </ul>    
                 
