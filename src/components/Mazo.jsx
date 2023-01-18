@@ -16,37 +16,18 @@ const Mazo = ({ list }) => {
     }).map((e, i) =>
         <div className="card border-primary mb-3 cardsize m-2" key={i}>
             <img src={e.image} className="card-img imgcard" alt="..."></img>
-            <div className="card-img-overlay d-flex align-items-end">
+            <div className="card-img-overlay bg-semi d-flex align-items-end">
 
                 <div className='card-body text-light'>
                     <h5 className="card-title">{e.name}</h5>
                     <p>
-                        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                            Link with href
+                        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        Expandir Información
                         </a>
-                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                            Button with data-target
-                        </button>
+                        
                     </p>
                     <div class="collapse" id="collapseExample">
                         <div class="card card-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                        </div>
-                    </div>
-                    <div>
-                        <button
-                            className='btn btn-primary'
-                            type='button'
-                            data-toogle="collapse"
-                            data-target="#collapseExample"
-                            aria-expanded="false"
-                            aria-controls="collapseExample">
-                            Expandir Información
-                        </button>
-                    </div>
-                </div>
-                <div className='collapse' id='collapseExample'>
-                    <div className='card card-body'>
                         <table class="table table-borderless text-light">
                             <tbody>
                                 <tr>
@@ -75,8 +56,11 @@ const Mazo = ({ list }) => {
                                 </tr>
                             </tbody>
                         </table>
+                        </div>
                     </div>
+                    
                 </div>
+                
 
 
             </div>

@@ -12,36 +12,19 @@ const MiApi = () => {
                 'https://akabab.github.io/starwars-api/api/all.json'
             );
             const info = fetch.data
-            //console.log(info)
-            
+
             setData([...info])
-            //const infoID = Object.keys(info).length
-            //console.log(infoID)
         };
         starwarsfetch();
     }, []);
 
-    /* const starwarsfetch = async () => {
-        const url = 'https://swapi.dev/api/people';
-        const response = await fetch(url)
-        const data = await response.json()
-        const result = data.results
-        console.log(data)
-        console.log(result)
-    } */
 
     return (
         <div className='text-center bg-dark'>
             <div className='text-white '>
                 <h1>Hola</h1>
                 <div>
-                    <ul>
-                        {/*data.hits.map(e => (
-                            <li key={e.objectID}>
-                                <a href={e.url}>{e.title}</a>
-                            </li>
-                        ))*/}
-                    </ul>
+                  
                 </div>
                 {<Mazo
                     list= {data}
