@@ -1,95 +1,123 @@
 import React from 'react';
 import { useState } from "react";
 
-const Mazo = ({list}) => {
+const Mazo = ({ list }) => {
 
     const stararray = list
     const [search, setSearch] = useState('');
     const inputSearch = (e) => {
         setSearch(e.target.value)
     }
-    console.log(stararray)
-    const starcard = Object.values(stararray).map((e, i) =>
-        <div className="card text-bg-dark cardsize" key={e.id}>
-            <img src="https://pixy.org/src/487/thumbs350/4870083.jpg" className="card-img" alt="..."></img>
-            <div className="card-img-overlay">
-                <p className="card-title">Nombre:
-                <span>
-                    <h2>{e.name}</h2>
-                    </span>
-                    </p>
-                <p className="card-text">Nacimiento: 
-                <span>
-                    <h3>{e.born}</h3>
-                    </span></p>
-                <p className="card-text"><small>Last updated 3 mins ago</small></p>
-            </div>
-        </div>)
-    //console.log(stararray[0] )
-     /*const starinfo = stararray.filter((e) => {
+    //console.log(stararray)
+    const starcard = Object.values(stararray).filter((e) => {
         return (
             search.toLowerCase() === '' ? e : e.name.toLowerCase().includes(search)
         )
-    }).map((e) => {
-        return (
-            <li className="list-group-item" key={e.id}>{e.name}</li>
-        )
-    })*/
-    
+    }).map((e, i) =>
+        <div className="card border-primary mb-3 cardsize m-2" key={i}>
+            <img src={e.image} className="card-img imgcard" alt="..."></img>
+            <div className="card-img-overlay d-flex align-items-end">
+
+                <div className='card-body text-light'>
+                    <h5 className="card-title">{e.name}</h5>
+                    <p>
+                        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            Link with href
+                        </a>
+                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            Button with data-target
+                        </button>
+                    </p>
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                        </div>
+                    </div>
+                    <div>
+                        <button
+                            className='btn btn-primary'
+                            type='button'
+                            data-toogle="collapse"
+                            data-target="#collapseExample"
+                            aria-expanded="false"
+                            aria-controls="collapseExample">
+                            Expandir Información
+                        </button>
+                    </div>
+                </div>
+                <div className='collapse' id='collapseExample'>
+                    <div className='card card-body'>
+                        <table class="table table-borderless text-light">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Nacimiento:</th>
+                                    <td className="text-primary" >{e.born}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Planeta:</th>
+                                    <td className="text-primary" >{e.homeworld}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Especie:</th>
+                                    <td className="text-primary" >{e.species}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Afiliación:</th>
+                                    <td className="text-primary" >{e.affiliations}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Maestro:</th>
+                                    <td className="text-primary" >{e.masters}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Aprendiz:</th>
+                                    <td className="text-primary" >{e.apprentices}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>)
+
+
     return (
         <div className="p-3 " >
-            
             <div className="card-body">
-                <div className='col'>
-                    <h5 className="card-title p-3">Listado de colaboradores</h5>
-                    {/*<p>{stararray.name}</p>*/}
-                </div>
                 <div className="p-4 bg-dark text-white" >
-
-            <div className="card-body">
-
-                <div className="container px-5">
-                    <div className="search">
-                        <div className="">
-                            <div className="">
-                                <h3 className="card-title">
-                                    Listado de colaboradores
-                                </h3>
-                            </div>
-                            <div className="col align-self-end">
-                                <div className="input-group px-5">
-                                    <input type="text" className="form-control" placeholder="Busca un colaborador" 
-                                    aria-label="Buscador de colaboradores" aria-describedby="basic-addon2"
-                                    onChange={inputSearch}></input>
-                                    <div className="input-group-append">
-                                        <button className="btn btn-primary" type="button">Buscar</button>
+                    <div className="card-body">
+                        <div className="container px-5">
+                            <div className="search">
+                                <div className="">
+                                    <div className="">
+                                        <h3 className="card-title">
+                                            Encuentra tu personaje de Starwars
+                                        </h3>
+                                    </div>
+                                    <div className="col align-self-end">
+                                        <div className="input-group px-5">
+                                            <input type="text" className="form-control" placeholder="Busca un colaborador"
+                                                aria-label="Buscador de colaboradores" aria-describedby="basic-addon2"
+                                                onChange={inputSearch}></input>
+                                            <div className="input-group-append">
+                                                <button className="btn btn-primary" type="button">Buscar</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
 
+                <ul className="d-flex flex-wrap">
+                    {starcard}
+                </ul>
             </div>
         </div>
-        {/* <div className="card text-bg-dark">
-            <img src="https://pixy.org/src/487/thumbs350/4870083.jpg" className="card-img" alt="..."></img>
-            <div className="card-img-overlay">
-                <h5 className="card-title">info</h5>
-                <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p className="card-text"><small>Last updated 3 mins ago</small></p>
-            </div>
-        </div> */}
-        <ul className="list-group lista">
-                 
-                 {starcard}
-                     
-                 </ul>    
-                
-
-            </div>
-        </div>
-        
     )
 }
 

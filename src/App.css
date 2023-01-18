@@ -38,5 +38,10 @@
 }
 
 .cardsize {
-  width: 18rem;
+  width: 18em;
+}
+.imgcard {
+  width: 18em;
+  height: 22em;
+  object-fit: cover;
 }
