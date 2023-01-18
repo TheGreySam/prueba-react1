@@ -14,21 +14,25 @@ const Mazo = ({ list }) => {
             search.toLowerCase() === '' ? e : e.name.toLowerCase().includes(search)
         )
     }).map((e, i) =>
-        <div className="card border-primary mb-3 cardsize m-2" key={i}>
+        <div className="card border-primary mb-3 cardsize m-2 bg-dark" key={i}>
             <img src={e.image} className="card-img imgcard" alt="..."></img>
-            <div className="card-img-overlay bg-semi d-flex align-items-end">
 
-                <div className='card-body text-light'>
-                    <h5 className="card-title">{e.name}</h5>
-                    <p>
-                        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                        Expandir Información
-                        </a>
-                        
-                    </p>
-                    <div class="collapse" id="collapseExample">
-                        <div class="card card-body">
-                        <table class="table table-borderless text-light">
+            <div id="accordion">
+                <div class="card-img-overlay bg-semi d-flex align-items-end">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                        <h5 className="card-title">{e.name}</h5>
+                            <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Expandir Información
+                            </button>
+                        </h5>
+                    </div>
+
+                    
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordion">
+                        <div class="card-body">
+                        <table class="table text-light">
                             <tbody>
                                 <tr>
                                     <th scope="row">Nacimiento:</th>
@@ -58,51 +62,44 @@ const Mazo = ({ list }) => {
                         </table>
                         </div>
                     </div>
-                    
                 </div>
-                
+            </div>)
 
 
-            </div>
-        </div>)
-
-
-    return (
-        <div className="p-3 " >
-            <div className="card-body">
-                <div className="p-4 bg-dark text-white" >
-                    <div className="card-body">
-                        <div className="container px-5">
-                            <div className="search">
-                                <div className="">
+            return (
+            <div className="p-3 " >
+                <div className="card-body">
+                    <div className="p-4 bg-dark text-white" >
+                        <div className="card-body">
+                            <div className="container px-5">
+                                <div className="search">
                                     <div className="">
-                                        <h3 className="card-title">
-                                            Encuentra tu personaje de Starwars
-                                        </h3>
-                                    </div>
-                                    <div className="col align-self-end">
-                                        <div className="input-group px-5">
-                                            <input type="text" className="form-control" placeholder="Busca un colaborador"
-                                                aria-label="Buscador de colaboradores" aria-describedby="basic-addon2"
-                                                onChange={inputSearch}></input>
-                                            <div className="input-group-append">
-                                                <button className="btn btn-primary" type="button">Buscar</button>
+                                        <div className="">
+                                            <h3 className="card-title">
+                                                Encuentra tu personaje de Starwars
+                                            </h3>
+                                        </div>
+                                        <div className="col align-self-end">
+                                            <div className="input-group px-5">
+                                                <input type="text" className="form-control" placeholder="Busca tu carta de starwars"
+                                                    aria-label="Buscador de personaje" aria-describedby="basic-addon2"
+                                                    onChange={inputSearch}></input>
+                                                
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
-
                     </div>
-                </div>
 
-                <ul className="d-flex flex-wrap">
-                    {starcard}
-                </ul>
+                    <ul className="d-flex flex-wrap">
+                        {starcard}
+                    </ul>
+                </div>
             </div>
-        </div>
-    )
+            )
 }
 
-export default Mazo;
+            export default Mazo;

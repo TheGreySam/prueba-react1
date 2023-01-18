@@ -22,7 +22,7 @@ const MiApi = () => {
     return (
         <div className='text-center bg-dark'>
             <div className='text-white '>
-                <h1>Hola</h1>
+                
                 <div>
                   
                 </div>
