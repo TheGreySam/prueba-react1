@@ -2,6 +2,7 @@ import React from 'react';
 import Mazo from './Mazo';
 import { useState, useEffect } from "react";
 import axios from 'axios';
+//import imgbg from '../assets/imgbg.png';
 //import { render } from 'react-dom';
 
 const MiApi = () => {
@@ -20,7 +21,7 @@ const MiApi = () => {
 
 
     return (
-        <div className='text-center bg-dark'>
+        <div className='text-center bg-light'>
             <div className='text-white '>
                 
                 <div>

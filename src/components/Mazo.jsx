@@ -20,12 +20,12 @@ const Mazo = ({ list }) => {
             <div id="accordion">
                 <div class="card-img-overlay bg-semi d-flex align-items-end">
                     <div class="card-header" id="headingOne">
-                        <h5 class="mb-0">
+                    
                         <h5 className="card-title">{e.name}</h5>
-                            <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <button type="button" class="btn btn-outline-info text-white" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             Expandir Información
                             </button>
-                        </h5>
+                        
                     </div>
 
                     
@@ -36,27 +36,27 @@ const Mazo = ({ list }) => {
                             <tbody>
                                 <tr>
                                     <th scope="row">Nacimiento:</th>
-                                    <td className="text-primary" >{e.born}</td>
+                                    <td >{e.born}</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Planeta:</th>
-                                    <td className="text-primary" >{e.homeworld}</td>
+                                    <td >{e.homeworld}</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Especie:</th>
-                                    <td className="text-primary" >{e.species}</td>
+                                    <td >{e.species}</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Afiliación:</th>
-                                    <td className="text-primary" >{e.affiliations}</td>
+                                    <td >{e.affiliations}</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Maestro:</th>
-                                    <td className="text-primary" >{e.masters}</td>
+                                    <td >{e.masters}</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Aprendiz:</th>
-                                    <td className="text-primary" >{e.apprentices}</td>
+                                    <td >{e.apprentices}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -67,14 +67,14 @@ const Mazo = ({ list }) => {
 
 
             return (
-            <div className="p-3 " >
+            <div className="p-3 bg-mazo" >
                 <div className="card-body">
-                    <div className="p-4 bg-dark text-white" >
+                    <div className="p-4 text-white" >
                         <div className="card-body">
                             <div className="container px-5">
                                 <div className="search">
                                     <div className="">
-                                        <div className="">
+                                        <div className="m-3">
                                             <h3 className="card-title">
                                                 Encuentra tu personaje de Starwars
                                             </h3>

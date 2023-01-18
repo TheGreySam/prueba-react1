@@ -2,17 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -24,19 +13,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .cardsize {
   width: 18em;
 }
@@ -46,9 +22,27 @@
   object-fit: cover;
   object-position: 100% 1%;
 }
+.imgtitle {
+  height: 35vh;
+  /*width: 100%;*/
+  object-fit: cover;
+  object-position: 100% 99%;
+}
+.imgcarousel {
+  height: 80vh;
+  /*width: 100%;*/
+  object-fit: cover;
+  object-position: 100% 1%;
+}
+.bg-mazo {
+  background-image: url('./assets/imgbg.jpg');
+  object-fit: cover;
+  background-color: aqua;
+}
 .bg-semi {
   background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgba(255,0,0,0), rgba(0, 60, 255, 0.671));
 }
 .icontitle {
-  margin: 5px
+  margin: 5px;
+  font-size: xxx-large;
 }
