@@ -5,16 +5,20 @@ import axios from 'axios';
 //import { render } from 'react-dom';
 
 const MiApi = () => {
-    const [data, setData] = useState({hits: []});
+    const [data, setData] = useState("");
     useEffect(() => {
         const starwarsfetch = async () => {
-            const result = await axios(
+            const fetch = await axios(
                 'https://swapi.dev/api/people'
             );
-            setData(result.data)
+            const info = fetch.data.results
+            setData([...info])
+            //const infoID = Object.keys(info).length
+            //console.log(infoID)
         };
         starwarsfetch();
     }, []);
+
     /* const starwarsfetch = async () => {
         const url = 'https://swapi.dev/api/people';
         const response = await fetch(url)
@@ -23,7 +27,7 @@ const MiApi = () => {
         console.log(data)
         console.log(result)
     } */
-    
+
     return (
         <div className='text-center bg-dark'>
             <div className='text-white '>
@@ -37,9 +41,9 @@ const MiApi = () => {
                         ))*/}
                     </ul>
                 </div>
-                {/* <Mazo
-                    list= {info}
-                        /> */}
+                {<Mazo
+                    list= {data}
+                        /> }
             </div>
         </div>
     )

@@ -8,8 +8,24 @@ const Mazo = ({list}) => {
     const inputSearch = (e) => {
         setSearch(e.target.value)
     }
-    console.log(stararray )
-    /* const starinfo = stararray.filter((e) => {
+    const starcard = Object.values(stararray).map((e, i) =>
+        <div className="card text-bg-dark cardsize">
+            <img src="https://pixy.org/src/487/thumbs350/4870083.jpg" className="card-img" alt="..."></img>
+            <div className="card-img-overlay">
+                <p className="card-title">Nombre:
+                <span>
+                    <h2>{e.name}</h2>
+                    </span>
+                    </p>
+                <p className="card-text">Nacimiento: 
+                <span>
+                    <h3>{e.birth_year}</h3>
+                    </span></p>
+                <p className="card-text"><small>Last updated 3 mins ago</small></p>
+            </div>
+        </div>)
+    //console.log(stararray[0] )
+     /*const starinfo = stararray.filter((e) => {
         return (
             search.toLowerCase() === '' ? e : e.name.toLowerCase().includes(search)
         )
@@ -17,7 +33,7 @@ const Mazo = ({list}) => {
         return (
             <li className="list-group-item" key={e.id}>{e.name}</li>
         )
-    })*/ 
+    })*/
     
     return (
         <div className="p-3 " >
@@ -25,6 +41,7 @@ const Mazo = ({list}) => {
             <div className="card-body">
                 <div className='col'>
                     <h5 className="card-title p-3">Listado de colaboradores</h5>
+                    {/*<p>{stararray.name}</p>*/}
                 </div>
                 <div className="p-4 bg-dark text-white" >
 
@@ -54,17 +71,17 @@ const Mazo = ({list}) => {
 
             </div>
         </div>
-        <div className="card text-bg-dark">
+        {/* <div className="card text-bg-dark">
             <img src="https://pixy.org/src/487/thumbs350/4870083.jpg" className="card-img" alt="..."></img>
             <div className="card-img-overlay">
                 <h5 className="card-title">info</h5>
                 <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                 <p className="card-text"><small>Last updated 3 mins ago</small></p>
             </div>
-        </div>
+        </div> */}
         <ul className="list-group lista">
                  
-                 {/*starinfo*/}
+                 {starcard}
                      
                  </ul>    
                 
