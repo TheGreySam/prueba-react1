@@ -8,8 +8,9 @@ const Mazo = ({list}) => {
     const inputSearch = (e) => {
         setSearch(e.target.value)
     }
+    console.log(stararray)
     const starcard = Object.values(stararray).map((e, i) =>
-        <div className="card text-bg-dark cardsize">
+        <div className="card text-bg-dark cardsize" key={e.id}>
             <img src="https://pixy.org/src/487/thumbs350/4870083.jpg" className="card-img" alt="..."></img>
             <div className="card-img-overlay">
                 <p className="card-title">Nombre:
@@ -19,7 +20,7 @@ const Mazo = ({list}) => {
                     </p>
                 <p className="card-text">Nacimiento: 
                 <span>
-                    <h3>{e.birth_year}</h3>
+                    <h3>{e.born}</h3>
                     </span></p>
                 <p className="card-text"><small>Last updated 3 mins ago</small></p>
             </div>

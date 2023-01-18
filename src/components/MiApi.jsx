@@ -9,9 +9,11 @@ const MiApi = () => {
     useEffect(() => {
         const starwarsfetch = async () => {
             const fetch = await axios(
-                'https://swapi.dev/api/people'
+                'https://akabab.github.io/starwars-api/api/all.json'
             );
-            const info = fetch.data.results
+            const info = fetch.data
+            //console.log(info)
+            
             setData([...info])
             //const infoID = Object.keys(info).length
             //console.log(infoID)
