@@ -18,21 +18,17 @@ const Mazo = ({ list }) => {
             <img src={e.image} className="card-img imgcard" alt="..."></img>
 
             <div id="accordion">
-                <div class="card-img-overlay bg-semi d-flex align-items-end">
+                <div class="card-img-overlay bg-semi d-flex align-items-end justify-content-center">
                     <div class="card-header" id="headingOne">
-                    
                         <h5 className="card-title">{e.name}</h5>
-                            <button type="button" class="btn btn-outline-info text-white" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <button type="button" class="btn btn-outline-info text-white" data-bs-toggle="collapse" data-bs-target={"#collapse"+e.id.toString()} aria-expanded="false" aria-controls={e.id.toString()}>
                             Expandir Información
                             </button>
-                        
                     </div>
-
-                    
                 </div>
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordion">
+                <div id={"collapse"+e.id.toString()} class="collapse" aria-labelledby="headingOne" data-bs-parent="#accordion">
                         <div class="card-body">
-                        <table class="table text-light">
+                        <table class="table text-light mb-4">
                             <tbody>
                                 <tr>
                                     <th scope="row">Nacimiento:</th>
@@ -48,16 +44,30 @@ const Mazo = ({ list }) => {
                                 </tr>
                                 <tr>
                                     <th scope="row">Afiliación:</th>
-                                    <td >{e.affiliations}</td>
+                                    <td>
+                                        <ul className='list-group'>
+                                            <li className='list-group-item list-group-item-info'>{e.affiliations}</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Maestro:</th>
-                                    <td >{e.masters}</td>
+                                    <td>
+                                        <ul className='list-group'>
+                                            <li className='list-group-item list-group-item-info'>{e.masters}</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Aprendiz:</th>
-                                    <td >{e.apprentices}</td>
+                                    <td>
+                                        <ul className='list-group'>
+                                            <li className='list-group-item list-group-item-info'>{e.apprentices}</li>
+                                        </ul>
+                                    </td>
                                 </tr>
+                                <hr />
+                                <hr />
                             </tbody>
                         </table>
                         </div>

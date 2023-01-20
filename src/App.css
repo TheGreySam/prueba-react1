@@ -14,11 +14,12 @@
 }
 
 .cardsize {
-  width: 18em;
+  width: 25em;
+  height: auto;
 }
 .imgcard {
-  width: 18em;
-  height: 22em;
+  width: 25em;
+  height: 26em;
   object-fit: cover;
   object-position: 100% 1%;
 }
