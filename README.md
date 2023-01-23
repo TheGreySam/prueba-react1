@@ -1,3 +1,5 @@
+Video link: https://youtu.be/JvRRAER60Mw
+
 Netifly link: https://jazzy-beignet-169cb4.netlify.app/
 
 API utilizada: https://github.com/akabab/starwars-api
